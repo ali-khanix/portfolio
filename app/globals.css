@@ -39,7 +39,7 @@ body {
 }
 
 .header-tws {
-  @apply py-8 xl:py-12 text-white bg-pink-50/20;
+  @apply py-8 xl:py-12 text-white;
 }
 .heading-1-tws {
   @apply text-4xl font-semibold;
@@ -47,4 +47,12 @@ body {
 
 .nav-container-tws {
   @apply container mx-auto flex justify-between items-center;
+}
+
+.desktop-nav {
+  @apply hidden xl:flex gap-8 items-center;
+}
+
+.mobile-nav {
+  @apply xl:hidden;
 }

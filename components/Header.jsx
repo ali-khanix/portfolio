@@ -15,14 +15,16 @@ const Header = () => {
           </h1>
         </Link>
 
-        {/* Desktop Nav */}
-
-        <div className="hidden lg:flex">
+        {/* Desktop Nav & Hire me button*/}
+        <div className="desktop-nav">
           <Nav />
-          <Link className="cursor-pointer" href={"/contact"}>
-            <Button>Hire Me</Button>
+          <Link href="/contact">
+            <Button className="cursor-pointer">Hire Me</Button>
           </Link>
         </div>
+
+        {/* Mobile Nav */}
+        <div className="mobile-nav">MobileNav</div>
       </div>
     </header>
   );
