@@ -19,8 +19,32 @@
   }
 }
 
+@theme {
+  --font-jetBrainsMono: "font-jetBrainsMono";
+
+  /* Colors */
+  --color-primary: #1c1c22;
+  --color-accentDefault: #00ff99;
+  --color-accentHover: #00e187;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply font-jetBrainsMono bg-primary text-white leading-loose;
+}
+
+@utility container {
+  padding: 15px;
+}
+
+.header-tws {
+  @apply py-8 xl:py-12 text-white bg-pink-50/20;
+}
+.heading-1-tws {
+  @apply text-4xl font-semibold;
+}
+
+.nav-container-tws {
+  @apply container mx-auto flex justify-between items-center;
 }
