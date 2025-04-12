@@ -23,7 +23,7 @@ const Stairs = () => {
     <>
       {/* Render 6 motion divs, each representing a step of the stairs
 
-    Each div will have the same animation defined by the strairAnimation object. The delay for each div is calculates sinamically based on it's reversed index, creating a staggered effect with decrasing delay for each subsequent step.
+    Each div will have the same animation defined by the strairAnimation object. The delay for each div is calculates dinamically based on it's reversed index, creating a staggered effect with decrasing delay for each subsequent step.
     
     */}
       {[
