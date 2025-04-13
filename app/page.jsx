@@ -30,7 +30,10 @@ export default function Home() {
               </Button>
 
               <div className="mb-8 xl:mb-0">
-                <Social />
+                <Social
+                  containerStyles="flex gap-6"
+                  iconStyles="w-9 h-9 border border-accentDefault rounded-full flex justify-center items-center text-accentDefault text base hover:bg-accentDefault hover:bg-accentDefault hover:text-primary hover:transition-all duration-500"
+                />
               </div>
             </div>
           </div>

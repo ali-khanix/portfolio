@@ -24,16 +24,12 @@ const socials = [
   },
 ];
 
-const Social = () => {
+const Social = ({ containerStyles, iconStyles }) => {
   return (
-    <div className="flex gap-8">
+    <div className={containerStyles}>
       {socials.map((social, index) => {
         return (
-          <Link
-            key={index}
-            href={social.path}
-            className="hover:text-accentDefault transition-all delay-[25]"
-          >
+          <Link key={index} href={social.path} className={iconStyles}>
             {social.icon}
           </Link>
         );
