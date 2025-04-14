@@ -1,8 +1,6 @@
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
-import StairTransition from "@/components/StairTransition";
 
 const jetBrainsMono = JetBrains_Mono({
   variable: "--font-jetBrainsMono",
@@ -19,9 +17,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${jetBrainsMono.variable} antialiased`}>
-        <Header />
-        <StairTransition />
-        <PageTransition>{children}</PageTransition>
+        <main>
+          <Header />
+          {children}
+        </main>
       </body>
     </html>
   );

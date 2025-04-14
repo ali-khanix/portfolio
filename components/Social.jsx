@@ -4,7 +4,7 @@ import { Github, Linkedin, Youtube, Instagram, Twitter } from "lucide-react";
 const socials = [
   {
     icon: <Github />,
-    path: "https://github.com",
+    path: "https://github.com/ali-khanix",
   },
   {
     icon: <Linkedin />,
