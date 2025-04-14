@@ -1,3 +1,4 @@
+import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
@@ -39,7 +40,7 @@ export default function Home() {
           </div>
 
           {/* Photo */}
-          <div>photo</div>
+          <Photo />
         </div>
       </div>
     </section>
