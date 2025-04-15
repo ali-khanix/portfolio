@@ -1,15 +1,27 @@
+"use client";
+
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { motion } from "framer-motion";
+import Stats from "@/components/Stats";
 
 export default function Home() {
   return (
     <section className="h-full">
+      {/* Hero */}
       <div className="container mx-auto h-full">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
-          {/* text */}
-          <div className="text-center xl:text-left">
+        <div className=" flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24">
+          {/* Hero Content*/}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: 1,
+              transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+            }}
+            className="text-center xl:text-left order-2 xl:order-none"
+          >
             <span className="text-xl">Web Developer</span>
             <h1 className="h1">
               Hello, I'm <br />{" "}
@@ -37,12 +49,17 @@ export default function Home() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
 
-          {/* Photo */}
-          <Photo />
+          {/* Hero Photo */}
+          <div className="order-1 xl:order-none mb-8 xl:mb-0">
+            <Photo />
+          </div>
         </div>
       </div>
+
+      {/* Stats */}
+      <Stats />
     </section>
   );
 }

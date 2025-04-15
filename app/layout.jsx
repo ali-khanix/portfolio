@@ -17,7 +17,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${jetBrainsMono.variable} antialiased`}>
-        <main>
+        <main className="xl:mx-[300px]">
           <Header />
           {children}
         </main>
