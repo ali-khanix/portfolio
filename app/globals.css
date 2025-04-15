@@ -68,6 +68,14 @@ body {
   }
 }
 
+.text-outline {
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: white;
+}
+.text-outline-hover {
+  -webkit-text-stroke: #00ff99;
+}
+
 @utility container {
   padding: 15px;
 }
