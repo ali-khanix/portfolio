@@ -15,6 +15,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
 import Image from "next/image";
+import WorkSliderBtns from "@/components/WorkSliderBtns";
 
 const projects = [
   {
@@ -188,7 +189,7 @@ const Work = () => {
                   <SwiperSlide key={index} className="w-full">
                     <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
                       {/* Overlay */}
-                      <div className=""></div>
+                      <div className="absolute top-0 bottom-0 w-full bg-black/10 z-10"></div>
 
                       {/* Image */}
                       <div className="relative w-full h-full">
@@ -203,6 +204,12 @@ const Work = () => {
                   </SwiperSlide>
                 );
               })}
+
+              {/* Slider buttons */}
+              <WorkSliderBtns
+                containerStyles="flex gap-2 right-0 bottom-[calc(50% - 22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
+                btnStyles={"cursor-pointer"}
+              />
             </Swiper>
           </div>
         </div>
