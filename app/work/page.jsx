@@ -13,6 +13,9 @@ import { ArrowUpRight } from "lucide-react";
 import { Github } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
+import "swiper/css";
+import Image from "next/image";
+
 const projects = [
   {
     num: "01",
@@ -63,7 +66,7 @@ const projects = [
     live: "",
   },
   {
-    num: "02",
+    num: "03",
     category: "fullstack",
     title: "project 3",
     description:
@@ -84,17 +87,30 @@ const projects = [
 
 const Work = () => {
   const [project, setProject] = useState(projects[0]);
+
+  const handleSlideChange = (swiper) => {
+    // Get current slide index
+    const currentIndex = swiper.activeIndex;
+
+    // Update project state based on current slide index
+    setProject(projects[currentIndex]);
+  };
   return (
     <motion.section
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
+        transition: {
+          delay: 1.4,
+          duration: 0.4,
+          ease: "easeIn",
+        },
       }}
-      className="min-h-[80vh] flex flex-col justify-center py12 xl:px-0"
+      className="min-h-[70vh] flex flex-col justify-center py-12 xl:px-0"
     >
       <div className="container mx-auto">
         <div className="flex flex-col xl:flex-row xl:gap-8">
-          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col order-2 xl:order-none">
+          <div className="w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none">
             <div className="flex flex-col gap-8 h-[50%]">
               {/* Outline num */}
               <div className="text-8xl leading-none font-extrabold text-transparent text-outline">
@@ -164,10 +180,28 @@ const Work = () => {
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
-              className="xl:h-[520px] mb-12"
+              onSlideChange={handleSlideChange}
+              className="xl-h-[520px] mb-12"
             >
-              {projects.map((project, index) => {
-                return <SwiperSlide key={index}>Slide</SwiperSlide>;
+              {projects.map((slide, index) => {
+                return (
+                  <SwiperSlide key={index} className="w-full">
+                    <div className="h-[460px] relative group flex justify-center items-center bg-pink-50/20">
+                      {/* Overlay */}
+                      <div className=""></div>
+
+                      {/* Image */}
+                      <div className="relative w-full h-full">
+                        <Image
+                          src={project.image}
+                          fill
+                          className="object-cover"
+                          alt={""}
+                        />
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                );
               })}
             </Swiper>
           </div>
