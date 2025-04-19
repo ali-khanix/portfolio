@@ -182,7 +182,7 @@ const Work = () => {
               spaceBetween={30}
               slidesPerView={1}
               onSlideChange={handleSlideChange}
-              className="xl-h-[520px] mb-12"
+              className="xl-h-[520px] mb-12 relative"
             >
               {projects.map((slide, index) => {
                 return (
@@ -196,7 +196,7 @@ const Work = () => {
                         <Image
                           src={project.image}
                           fill
-                          className="object-cover"
+                          className="object-cover "
                           alt={""}
                         />
                       </div>
@@ -207,8 +207,12 @@ const Work = () => {
 
               {/* Slider buttons */}
               <WorkSliderBtns
-                containerStyles="flex gap-2 right-0 bottom-[calc(50% - 22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none"
-                btnStyles={"cursor-pointer"}
+                containerStyles={
+                  "absolute bottom-[calc(50%_-_22px)] xl:bottom-[0] right-0 z-20 flex gap-2 justify-between w-full xl:w-max xl:justify-none"
+                }
+                btnStyles={
+                  "bg-accentDefault hover:bg-accentHover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all cursor-pointer"
+                }
               />
             </Swiper>
           </div>

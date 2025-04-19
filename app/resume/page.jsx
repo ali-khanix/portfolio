@@ -36,11 +36,7 @@ const education = {
       degree: "Full Stack Web Development Bootcamp",
       duration: "2023 - 2024",
     },
-    {
-      instituation: "Codeacademy",
-      degree: "Front-end Track",
-      duration: 2023,
-    },
+
     {
       instituation: "Online Course Platform",
       degree: "The Ultimate React Course: React, Next.js, Redux & More",
@@ -56,25 +52,10 @@ const education = {
       degree: "Front-end Track",
       duration: 2020,
     },
-    {
-      instituation: "Build Responsive Real-World Websites with HTML and CSS",
-      degree: "Front-end Track",
-      duration: 2020,
-    },
-    {
-      instituation: "Build Responsive Real-World Websites with HTML and CSS",
-      degree: "Front-end Track",
-      duration: 2020,
-    },
-    {
-      instituation: "Build Responsive Real-World Websites with HTML and CSS",
-      degree: "Front-end Track",
-      duration: 2020,
-    },
   ],
 };
 
-// Education
+// Experience
 const experience = {
   icon: "/assets/resume/badge.svg",
   title: "My education",
