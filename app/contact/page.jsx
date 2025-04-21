@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/select";
 
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
-import { TextArea } from "@radix-ui/themes";
 
 const info = [
   {
@@ -62,9 +61,9 @@ const Contact = () => {
                 Let's work together
               </h3>
               <p className="text-white/60">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta
-                illum qui harum repellat debitis distinctio blanditiis voluptas
-                laboriosam, aspernatur dolorem.
+                Passionate about building exceptional digital experiences. Let’s
+                connect and create impactful solutions tailored to your needs.
+                Available for freelance, remote, or full-time opportunities.
               </p>
               {/* Input */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

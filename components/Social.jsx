@@ -8,19 +8,7 @@ const socials = [
   },
   {
     icon: <Linkedin />,
-    path: "https://linkedin.com",
-  },
-  {
-    icon: <Youtube />,
-    path: "https://youtube.com",
-  },
-  {
-    icon: <Instagram />,
-    path: "https://instagram.com",
-  },
-  {
-    icon: <Twitter />,
-    path: "https://x.com",
+    path: "https://www.linkedin.com/in/ali-khani-b042091b9/",
   },
 ];
 

@@ -40,6 +40,12 @@ const projects = [
       {
         name: "Swiper",
       },
+      {
+        name: "UI/UX",
+      },
+      {
+        name: "Figma",
+      },
     ],
     image: `/assets/work/thumb1.png`,
     github: "https://github.com/ali-khanix/sorena_react",
