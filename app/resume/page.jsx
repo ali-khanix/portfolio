@@ -20,15 +20,25 @@ import {
   FaNodeJs,
 } from "react-icons/fa6";
 
-import { SiTailwindcss, SiNextdotjs, SiShadcnui } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiNextdotjs,
+  SiShadcnui,
+  SiRedux,
+  SiRadixui,
+} from "react-icons/si";
+
+import { TbBrandFramerMotion } from "react-icons/tb";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-// Experience Data
+import Gsap from "@/components/icons/Gsap";
+
+// Resume Data
 const education = {
   icon: "./assets/resume/cap.svg",
-  title: "My experience",
+  title: "My Education",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+    "Diverse online and university education in full-stack development, JavaScript, React, and computer science from top platforms and institutions.",
 
   items: [
     {
@@ -36,11 +46,22 @@ const education = {
       degree: "Full Stack Web Development Bootcamp",
       duration: "2023 - 2024",
     },
-
     {
-      instituation: "Online Course Platform",
-      degree: "The Ultimate React Course: React, Next.js, Redux & More",
+      instituation:
+        "Online Course Platform - The Ultimate React Course: React, Next.js, Redux & More",
+      degree: "React.js, Next.js, Redux",
       duration: 2023,
+    },
+    {
+      instituation: "Harvard University - CS50: Computer Science",
+      degree:
+        "Computer science and programming, Fimiliraty with C, Python, SQL",
+      duration: 2023,
+    },
+    {
+      instituation: "Coursera - Online Platfrom Academy",
+      degree: "HTML, CSS, and Javascript for Web Developers (Certificated)",
+      duration: 2020,
     },
     {
       instituation: "Online Course Platform",
@@ -48,8 +69,9 @@ const education = {
       duration: 2020,
     },
     {
-      instituation: "Build Responsive Real-World Websites with HTML and CSS",
-      degree: "Front-end Track",
+      instituation:
+        "Online Course Platform - Build Responsive Real-World Websites with HTML and CSS",
+      degree: "Responsive Real-World Websites with HTML and CSS",
       duration: 2020,
     },
   ],
@@ -58,9 +80,9 @@ const education = {
 // Experience
 const experience = {
   icon: "/assets/resume/badge.svg",
-  title: "My education",
+  title: "My Experience",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+    "Hands-on experience across startups and agencies as full-stack, front-end, and UI/UX developer, delivering impactful digital solutions.",
 
   items: [
     {
@@ -70,7 +92,7 @@ const experience = {
     },
     {
       company: "Web Design Studio",
-      position: "Front-End Developer Intern",
+      position: "Front-End Developer",
       duration: "2021 - 2023",
     },
     {
@@ -84,9 +106,9 @@ const experience = {
       duration: "2019",
     },
     {
-      company: "Softare Development Firm",
-      position: "Junior Developer",
-      duration: "2018 - 2019",
+      company: "Art Of Seo",
+      position: "Intern Developer",
+      duration: "2019",
     },
   ],
 };
@@ -94,7 +116,7 @@ const experience = {
 const skills = {
   title: "My skills",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+    "I specialize in building modern, responsive, and high-performance web applications using a robust stack of front-end and back-end technologies. From semantic HTML5 and advanced CSS3 to JavaScript frameworks like React, Next.js, and Redux Toolkit, I bring designs to life with clean code and seamless UI/UX. My expertise extends to Tailwind CSS, Shadcn/UI, Radix UI, and animation libraries like Framer Motion and GSAP, allowing me to craft smooth, interactive experiences. I also utilize design tools like Figma to ensure consistency from concept to implementation",
   skillList: [
     {
       icon: <FaHtml5 />,
@@ -113,12 +135,20 @@ const skills = {
       name: "react.js",
     },
     {
+      icon: <SiRedux />,
+      name: "Redux toolkit",
+    },
+    {
       icon: <FaNodeJs />,
       name: "node.js",
     },
     {
       icon: <SiNextdotjs />,
       name: "next.js",
+    },
+    {
+      icon: <SiRadixui />,
+      name: "RadixUi",
     },
     {
       icon: <SiShadcnui />,
@@ -133,11 +163,11 @@ const skills = {
       name: "figma",
     },
     {
-      icon: "M",
+      icon: <TbBrandFramerMotion />,
       name: "motion",
     },
     {
-      icon: "G",
+      icon: <Gsap />,
       name: "gsap",
     },
   ],
@@ -147,7 +177,7 @@ const skills = {
 const about = {
   title: "About Me",
   description:
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+    "Passionate full-stack developer crafting modern, scalable web experiences with clean code, creative design, and a focus on user impact.",
   info: [
     {
       fieldName: "Name",
@@ -218,7 +248,7 @@ const Resume = () => {
                 <h3 className="text-4xl font-bold capitalize">
                   {experience.title}
                 </h3>
-                <p className="max-w-[600px] text-white/60">
+                <p className="max-w-[600px] mx-auto text-white/60">
                   {experience.description}
                 </p>
 
@@ -265,7 +295,7 @@ const Resume = () => {
                       return (
                         <li
                           key={index}
-                          className="bg-[#232329] h-[240px] py-6 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
+                          className="bg-[#232329] h-[300px] py-4 px-10 rounded-xl flex flex-col justify-center items-center lg:items-start gap-1"
                         >
                           <span className="text-accentDefault">
                             {item.duration}
@@ -303,7 +333,11 @@ const Resume = () => {
                           <Tooltip>
                             <TooltipTrigger className="w-full h-[150px] bg-[#232329] rounded-xl flex justify-center items-center">
                               <div className="cursor-pointer text-6xl hover:text-accentDefault transition-all duration-300">
-                                {skill.icon}
+                                {skill.isImage ? (
+                                  <img src={skill.icon} alt={skill.name} />
+                                ) : (
+                                  <span>{skill.icon}</span>
+                                )}
                               </div>
                             </TooltipTrigger>
 
