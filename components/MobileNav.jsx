@@ -2,16 +2,7 @@
 
 import { useState } from "react";
 
-import {
-  Sheet,
-  SheetClose,
-  SheetContent,
-  SheetDescription,
-  SheetFooter,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -46,8 +37,12 @@ const MobileNav = () => {
   const pathName = usePathname();
   const [isOpen, setIsOpen] = useState();
 
+  const handleClick = () => {
+    setIsOpen(false);
+  };
+
   return (
-    <Sheet open={isOpen} onOpen>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="flex justify-center items-center">
         <AlignJustify className="text-accentDefault size-9 cursor-pointer" />
         <VisuallyHidden>
@@ -70,6 +65,7 @@ const MobileNav = () => {
           {links.map((link, index) => {
             return (
               <Link
+                onClick={handleClick}
                 className={
                   link.path === pathName &&
                   `text-accentDefault border-b-2 text-xl border-accentDefault`
