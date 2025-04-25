@@ -2,13 +2,18 @@
 
 import { useState } from "react";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { AlignJustify } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/themes";
-import { DialogTitle } from "@radix-ui/react-dialog";
+import { DialogContent, DialogTitle } from "@radix-ui/react-dialog";
 
 const links = [
   {
@@ -35,7 +40,7 @@ const links = [
 
 const MobileNav = () => {
   const pathName = usePathname();
-  const [isOpen, setIsOpen] = useState();
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
     setIsOpen(false);
@@ -51,6 +56,7 @@ const MobileNav = () => {
       </SheetTrigger>
       <SheetContent className="flex flex-col">
         {/* Logo */}
+        <SheetDescription className={"sr-only hidden"}>Desc</SheetDescription>
 
         {/* Nav */}
         <div className="mt-32 mb-40 text-center text-2xl">
@@ -67,8 +73,9 @@ const MobileNav = () => {
               <Link
                 onClick={handleClick}
                 className={
-                  link.path === pathName &&
-                  `text-accentDefault border-b-2 text-xl border-accentDefault`
+                  link.path === pathName
+                    ? `text-accentDefault border-b-2 text-xl border-accentDefault`
+                    : ""
                 }
                 key={index}
                 href={link.path}
