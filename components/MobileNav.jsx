@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import { AlignJustify } from "lucide-react";
 import { VisuallyHidden } from "@radix-ui/themes";
@@ -44,10 +44,16 @@ const links = [
 
 const MobileNav = () => {
   const pathName = usePathname();
-  const [isOpen, setIsOpen] = useState();
+  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleNavigate = (path) => {
+    router.push(path);
+    setIsOpen(false);
+  };
 
   return (
-    <Sheet open={isOpen} onOpen>
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger className="flex justify-center items-center">
         <AlignJustify className="text-accentDefault size-9 cursor-pointer" />
         <VisuallyHidden>
@@ -59,7 +65,7 @@ const MobileNav = () => {
 
         {/* Nav */}
         <div className="mt-32 mb-40 text-center text-2xl">
-          <Link href={"/"}>
+          <Link onClick={() => handleNavigate("/")} href={"/"}>
             <h1 className="text-4xl font-semibold">
               Ali<span className="text-accentDefault">.</span>
             </h1>
@@ -70,6 +76,7 @@ const MobileNav = () => {
           {links.map((link, index) => {
             return (
               <Link
+                onClick={() => handleNavigate(link.path)}
                 className={
                   link.path === pathName &&
                   `text-accentDefault border-b-2 text-xl border-accentDefault`
