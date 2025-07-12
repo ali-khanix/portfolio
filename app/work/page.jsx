@@ -23,7 +23,7 @@ const projects = [
     category: "front-end",
     title: "project 1",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+      "I build This project for the office i worked on, Environment Ads",
     stack: [
       {
         name: "Html 5",
@@ -53,10 +53,10 @@ const projects = [
   },
   {
     num: "02",
-    category: "fullstack",
+    category: "Front-End",
     title: "project 2",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
+      "This is a digital menu for one of my clients, it's just for mobile!",
     stack: [
       {
         name: "Next.js",
@@ -65,30 +65,21 @@ const projects = [
         name: "Tailwindcss",
       },
       {
-        name: "Node.js",
-      },
-    ],
-    image: `/assets/work/thumb2.png`,
-    github: "",
-    live: "",
-  },
-  {
-    num: "03",
-    category: "fullstack",
-    title: "project 3",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio tenetur.",
-    stack: [
-      {
-        name: "Next.js",
+        name: "React.js",
       },
       {
-        name: "Tailwindcss",
+        name: "RadixUi",
+      },
+      {
+        name: "Sentry.io",
+      },
+      {
+        name: "GSAP",
       },
     ],
-    image: `/assets/work/thumb3.png`,
-    github: "",
-    live: "",
+    image: `/assets/work/cupchicoffee-thumb.png`,
+    github: "https://github.com/ali-khanix/cupchicoffe-increment-decrement",
+    live: "https://www.cupchicoffee.ir/",
   },
 ];
 
