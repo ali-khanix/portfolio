@@ -90,25 +90,16 @@ const experience = {
       position: "Full Stack Developer",
       duration: "2023 - Present",
     },
-    {
-      company: "Web Design Studio",
-      position: "Front-End Developer",
-      duration: "2021 - 2023",
-    },
-    {
-      company: "Digital Agency",
-      position: "UI/UX Designer",
-      duration: "2020 - 2021",
-    },
+
     {
       company: "E-commerce Startup",
       position: "Freelance Web Developer",
-      duration: "2019",
+      duration: "2021-2022",
     },
     {
       company: "Art Of Seo",
       position: "Intern Developer",
-      duration: "2019",
+      duration: "2020",
     },
   ],
 };
